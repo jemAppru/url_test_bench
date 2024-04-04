@@ -1,0 +1,38 @@
+{% comment %} The base.html serves as a foundational template for the website, containing a common set of HTML tags, styles, and scripts, such as CDNs for Bootstrap and jQuery, to ensure consistency across the site. 
+It defines a flexible structure with named blocks (e.g., title, content, extra_scripts) that child templates can specifically override or extend. 
+This setup facilitates the easy incorporation of standard code snippets into specific sections across multiple pages, greatly simplifying the development process by promoting code reuse and maintainability. 
+{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}URL TEST BENCH{% endblock title %}</title>
+    <link rel="stylesheet" href={% static "style/style.css" %}>
+    {% block extra_head %}
+    
+    {% endblock extra_head %}
+</head>
+<body>
+    <header class="title-bar">
+        <h1></h1>
+        <nav>
+            <!-- Navigation items here -->
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Default content goes here -->
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <p>© 2024 Tech europe</p>
+    </footer>
+
+    {% block extra_scripts %}{% endblock extra_scripts %}
+</body>
+</html>
