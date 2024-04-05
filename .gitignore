@@ -1,2 +1,4 @@
 *venv*
-*pycache*
+main/__pycache__*
+*pyc*
+*cpython-311.pyc*
